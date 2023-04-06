@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SM_Wep_MachineGun_01
   m_EditorClassIdentifier: 
   prefab: {fileID: 1787681452143696, guid: e93050ee6a1feb949b8fdc9a97d295b1, type: 3}
-  icon: {fileID: -891978832, guid: 4b007ba37d11679438ecf9c754d51810, type: 3}
-  weaponName: Sniper
+  icon: {fileID: 1932558442, guid: 4b007ba37d11679438ecf9c754d51810, type: 3}
+  weaponName: "\u041F\u0443\u043B\u0435\u043C\u0435\u0442"
   goldCost: 20000
   damageValue: 0
   ammoCount: 5

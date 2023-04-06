@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab2c4ddbdd9881440bd0ba693a10c6e2, type: 3}
   m_Name: Pistol
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1508934165754910, guid: 68317e2c4c57a6e45be7063240f91cbb, type: 3}
-  icon: {fileID: 1829735480, guid: 4b007ba37d11679438ecf9c754d51810, type: 3}
-  weaponName: "\u041F\u0438\u043A\u0430\u043B\u0435\u0442"
+  prefab: {fileID: 1375090684829650, guid: 6a6b35cc4500f264d86e660d0f975977, type: 3}
+  icon: {fileID: 2107580837, guid: 4b007ba37d11679438ecf9c754d51810, type: 3}
+  weaponName: "\u041F\u0438\u0441\u0442\u043E\u043B\u0435\u0442 \u041C\u0430\u043A\u0430\u0440\u043E\u0432\u0430"
   goldCost: 3434
   damageValue: 5
   ammoCount: 10

@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab2c4ddbdd9881440bd0ba693a10c6e2, type: 3}
-  m_Name: Sniper 9
+  m_Name: SM_Wep_Rifle_Assault_05
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1619436894274318, guid: 9e3364afdd9ba0048bc7169cf1c076b8, type: 3}
-  icon: {fileID: 2107580837, guid: 4b007ba37d11679438ecf9c754d51810, type: 3}
-  weaponName: Sniper
+  prefab: {fileID: 1042019584973368, guid: 04e8ca980b4beed48979d827d8250fb4, type: 3}
+  icon: {fileID: 767261539, guid: 4b007ba37d11679438ecf9c754d51810, type: 3}
+  weaponName: "\u0410\u0432\u0442\u043E\u043C\u0430\u0442"
   goldCost: 20000
   damageValue: 0
   ammoCount: 5

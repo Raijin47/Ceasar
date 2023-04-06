@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab2c4ddbdd9881440bd0ba693a10c6e2, type: 3}
-  m_Name: Sniper 8
+  m_Name: SM_Wep_Revolver_01
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1619436894274318, guid: 9e3364afdd9ba0048bc7169cf1c076b8, type: 3}
-  icon: {fileID: 1932558442, guid: 4b007ba37d11679438ecf9c754d51810, type: 3}
-  weaponName: Sniper
+  prefab: {fileID: 1347048607590356, guid: 7e140394e95da314a9a63645d1c4a08f, type: 3}
+  icon: {fileID: 323907999, guid: 4b007ba37d11679438ecf9c754d51810, type: 3}
+  weaponName: "\u041A\u043E\u0441\u043C\u0438\u0447\u0435\u0441\u043A\u0438\u0439
+    \u0440\u0435\u0432\u043E\u043B\u044C\u0432\u0435\u0440"
   goldCost: 20000
   damageValue: 0
   ammoCount: 5

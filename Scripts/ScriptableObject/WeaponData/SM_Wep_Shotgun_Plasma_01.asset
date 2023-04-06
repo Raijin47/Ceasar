@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab2c4ddbdd9881440bd0ba693a10c6e2, type: 3}
-  m_Name: Sniper 4
+  m_Name: SM_Wep_Shotgun_Plasma_01
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1619436894274318, guid: 9e3364afdd9ba0048bc7169cf1c076b8, type: 3}
-  icon: {fileID: -1045835089, guid: 4b007ba37d11679438ecf9c754d51810, type: 3}
-  weaponName: Sniper
+  prefab: {fileID: 1590080179936372, guid: 63a05b38d307b10488a7ebbb73b7f178, type: 3}
+  icon: {fileID: -1014861353, guid: 4b007ba37d11679438ecf9c754d51810, type: 3}
+  weaponName: "\u041A\u043E\u0441\u043C\u0438\u0447\u0435\u0441\u043A\u0438\u0439
+    \u0434\u0440\u043E\u0431\u043E\u0432\u0438\u043A"
   goldCost: 20000
   damageValue: 0
   ammoCount: 5

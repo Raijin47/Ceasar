@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7bc2d18b1e8ff245a2861bd44ab98b8, type: 3}
+  m_Name: New MotobikeData 2
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1197356085744256, guid: ad67a1ea8d45ba9418d75eeba51be5da, type: 3}
+  icon: {fileID: 1338446267, guid: b3c38c4af6ff95a4bb0dc66e98bf5c66, type: 3}
+  motobikeName: Preset 2
+  goldCost: 20000
+  speed: 4
+  acceleration: 6
+  controllability: 0.44

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab2c4ddbdd9881440bd0ba693a10c6e2, type: 3}
+  m_Name: SM_Wep_MachineGun_01
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1787681452143696, guid: e93050ee6a1feb949b8fdc9a97d295b1, type: 3}
+  icon: {fileID: -891978832, guid: 4b007ba37d11679438ecf9c754d51810, type: 3}
+  weaponName: Sniper
+  goldCost: 20000
+  damageValue: 0
+  ammoCount: 5
+  reloadTime: 0
+  intervalShot: 0

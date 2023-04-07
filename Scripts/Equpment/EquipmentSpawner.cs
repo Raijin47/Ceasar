@@ -2,12 +2,15 @@ using UnityEngine;
 
 public class EquipmentSpawner : MonoBehaviour
 {
-    [SerializeField] private Transform weaponPoint;
-    [SerializeField] private Transform motobikePoint;
+    private Transform weaponPoint;
 
-    void Start()
+    void Awake()
     {
-        if(Equipment.prefabMotobike != null) Instantiate(Equipment.prefabMotobike, motobikePoint);
-        if(Equipment.prefabWeapon != null) Instantiate(Equipment.prefabWeapon, weaponPoint);
+        if (Equipment.prefabWoman != null) Instantiate(Equipment.prefabWoman, transform);
+        weaponPoint = GetComponentInChildren<WeaponSpawner>().transform;
+        if (Equipment.prefabMotobike != null) Instantiate(Equipment.prefabMotobike, transform);     
+        if(Equipment.prefabMale != null) Instantiate(Equipment.prefabMale, transform);
+        if (Equipment.prefabWeapon != null) Instantiate(Equipment.prefabWeapon, weaponPoint);
+
     }
 }

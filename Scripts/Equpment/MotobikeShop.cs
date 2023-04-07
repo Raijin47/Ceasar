@@ -14,7 +14,6 @@ public class MotobikeShop : MonoBehaviour
     [SerializeField] private GameObject purchasedButton;
     [SerializeField] private GameObject noMoneyPanel;
     [SerializeField] private MotobikeData[] motobikeData;
-    [SerializeField] private LoadingData loadingData;
     
     private int i = 0;
     private int selected = 0;
@@ -53,12 +52,10 @@ public class MotobikeShop : MonoBehaviour
 
     public void SelectedButton()
     {
-        //isSelected[selected] = false;
         selected = i;
-        //isSelected[i] = true;
         Equipment.SetMotobike(motobikeData[i].Speed, motobikeData[i].Prefab, motobikeData[i].Controllability, motobikeData[i].Acceleration);
         UpdateDisplayUI(i);
-        loadingData.SaveMotobike(i);
+        ManagerData.motobike = i;
     }
 
     public void PurchasedButton()

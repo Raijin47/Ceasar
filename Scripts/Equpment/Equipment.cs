@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public static class Equipment// : MonoBehaviour
+public static class Equipment
 {
     public static GameObject prefabMotobike;
     public static float speed = 5f;
@@ -13,7 +13,8 @@ public static class Equipment// : MonoBehaviour
     public static float reloadTime;
     public static float intervalShot;
 
-    public static GameObject prefabChara;
+    public static GameObject prefabMale;
+    public static GameObject prefabWoman;
 
     public static void SetMotobike(float getSpeed, GameObject getPrefab, float getControllability, float getAcceleration)
     {
@@ -32,8 +33,9 @@ public static class Equipment// : MonoBehaviour
         intervalShot = getIntervalShot;
     }
 
-    public static void SetChara()
+    public static void SetChara(GameObject getPrefabMale, GameObject getPrefabWoman)
     {
-
+        prefabMale = getPrefabMale;
+        prefabWoman = getPrefabWoman;
     }
 }

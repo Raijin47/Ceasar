@@ -1,18 +1,56 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharaShop : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Text title;
+    [SerializeField] private Text descriptionText;
+    [SerializeField] private Image previewImage;
+    [SerializeField] private GameObject selectedButton;
+    [SerializeField] private GameObject purchasedButton;
+    [SerializeField] private CharaData[] charaData;
+
+    private int i = 0;
+    private int selected = 0;
+
+    private void Start()
     {
-        
+        UpdateDisplayUI(i);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void UpdateDisplayUI(int a)
     {
-        
+        previewImage.sprite = charaData[a].Icon;
+        title.text = charaData[a].CharaName;
+        descriptionText.text = charaData[a].CharaDescription;
+        selectedButton.SetActive(ManagerData.charaPurchased[a]);
+        purchasedButton.SetActive(!ManagerData.charaPurchased[a]);
+    }
+
+    public void LeftButton()
+    {
+        if (i == 0) i = charaData.Length;
+        i--;
+        UpdateDisplayUI(i);
+    }
+
+    public void RightButton()
+    {
+        i++;
+        if (i >= charaData.Length) i = 0;
+        UpdateDisplayUI(i);
+    }
+
+    public void SelectedButton()
+    {
+        selected = i;
+        Equipment.SetChara(charaData[i].PrefabMale, charaData[i].PrefabWoman);
+        UpdateDisplayUI(i);
+        ManagerData.chara = i;
+    }
+
+    public void PurchasedButton()
+    {
+
     }
 }

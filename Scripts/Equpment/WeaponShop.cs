@@ -3,21 +3,20 @@ using UnityEngine.UI;
 
 public class WeaponShop : MonoBehaviour
 {
-    [SerializeField] private Text description;
+    [SerializeField] private Text title;
+    [SerializeField] private Text costText;
+    [SerializeField] private Text money;
     [SerializeField] private Image previewImage;
+    [SerializeField] private Image damageImage;
+    [SerializeField] private Image shotRateImage;
+    [SerializeField] private Image ammoCountImage;
     [SerializeField] private GameObject selectedButton;
     [SerializeField] private GameObject purchasedButton;
+    [SerializeField] private GameObject noMoneyPanel;
     [SerializeField] private WeaponData[] weaponData;
-    [SerializeField] private LoadingData loadingData;
-
-    [SerializeField] private bool[] isPurchased;
-    [SerializeField] private bool[] isSelected;
-
-
 
     private int i = 0;
     private int selected = 0;
-
 
     private void Start()
     {
@@ -27,9 +26,14 @@ public class WeaponShop : MonoBehaviour
     private void UpdateDisplayUI(int a)
     {
         previewImage.sprite = weaponData[a].Icon;
-        description.text = weaponData[a].WeaponName;        
-        selectedButton.SetActive(isPurchased[a]);
-        purchasedButton.SetActive(!isPurchased[a]);
+        title.text = weaponData[a].WeaponName;
+        damageImage.fillAmount = weaponData[a].DamageValue / 10;
+        shotRateImage.fillAmount = weaponData[a].IntervalShot / 10;
+        ammoCountImage.fillAmount = weaponData[a].AmmoCount / 20;
+        costText.text = weaponData[a].GoldCost.ToString();
+        money.text = ManagerData.money.ToString();
+        selectedButton.SetActive(ManagerData.weaponPurchased[a]);
+        purchasedButton.SetActive(!ManagerData.weaponPurchased[a]);
     }
 
     public void LeftButton()
@@ -48,17 +52,20 @@ public class WeaponShop : MonoBehaviour
 
     public void SelectedButton()
     {
-        isSelected[selected] = false;
         selected = i;
-        isSelected[i] = true;
         Equipment.SetWeapon(weaponData[i].DamageValue, weaponData[i].Prefab, weaponData[i].AmmoCount, weaponData[i].ReloadTime, weaponData[i].IntervalShot);
         UpdateDisplayUI(i);
-        loadingData.SaveWeapon(i);
+        ManagerData.weapon = i;
     }
 
     public void PurchasedButton()
     {
-        isPurchased[i] = true;
-        UpdateDisplayUI(i);
+        if (ManagerData.money >= weaponData[i].GoldCost)
+        {
+            ManagerData.money -= weaponData[i].GoldCost;
+            ManagerData.weaponPurchased[i] = true;
+            UpdateDisplayUI(i);
+        }
+        else noMoneyPanel.SetActive(true);
     }
 }

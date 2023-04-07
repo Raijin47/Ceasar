@@ -1,18 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class CharaData : MonoBehaviour
+[CreateAssetMenu(fileName = "New CharaData", menuName = "Chara Data", order = 52)]
+public class CharaData : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject prefabMale;
+    [SerializeField] private GameObject prefabWoman;
+    [SerializeField] private Sprite icon;
+    [SerializeField] private string charaName;
+    [SerializeField] private string charaDescription;
 
-    // Update is called once per frame
-    void Update()
+    public GameObject PrefabMale
     {
-        
+        get { return prefabMale; }
+    }
+    public GameObject PrefabWoman
+    {
+        get { return prefabWoman; }
+    }
+    public Sprite Icon
+    {
+        get { return icon; }
+    }
+    public string CharaName
+    {
+        get { return charaName; }
+    }
+    public string CharaDescription
+    {
+        get { return charaDescription; }
     }
 }

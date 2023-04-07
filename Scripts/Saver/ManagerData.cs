@@ -11,9 +11,8 @@ public static class ManagerData
 
     public static bool[] weaponPurchased = new bool[12];
     public static bool[] motobikePurchased = new bool[4];
+    public static bool[] charaPurchased = new bool[4];
     private static Data data;
-
-
 
     public static void LoadingData()
     {
@@ -35,6 +34,7 @@ public static class ManagerData
             chara = 0;
             weaponPurchased = new bool[12] { true, false, false, false, false, false, false, false, false, false, false, false };
             motobikePurchased = new bool[4] { true, false, false, false };
+            charaPurchased = new bool[4] { true, false, false, false };
         }
     }
 
@@ -47,7 +47,8 @@ public static class ManagerData
             MotobikeID = motobike,
             CharaID = chara,
             WeaponPurchased = weaponPurchased,
-            MotobikePurchased = motobikePurchased
+            MotobikePurchased = motobikePurchased,
+            CharaPurchased = charaPurchased
         };
         SaveService<Data>.Save(data, "/", "Save");
     }
@@ -61,4 +62,5 @@ public struct Data
     public int CharaID;
     public bool[] WeaponPurchased;
     public bool[] MotobikePurchased;
+    public bool[] CharaPurchased;
 }

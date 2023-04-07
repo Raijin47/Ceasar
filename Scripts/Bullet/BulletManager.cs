@@ -1,9 +1,9 @@
 ﻿using Pool;
 using UnityEngine;
 
-namespace Bullet
+namespace Bullett
 {
-    public class BulletManager : MonoBehaviour
+  /*  public class BulletManager : MonoBehaviour
     {
         public static BulletManager Instance;
 
@@ -41,5 +41,5 @@ namespace Bullet
             _instantiateObject = new PoolInstantiateObject<BulletBase>(_bulletLocator.BulletBase);
             _bulletProvider = new BulletProvider(_instantiateObject, _content);
         }
-    }
+    }*/
 }

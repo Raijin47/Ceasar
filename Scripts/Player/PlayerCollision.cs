@@ -5,12 +5,12 @@ namespace Player
     public class PlayerCollision : MonoBehaviour
     {
         private PlayerMovement playerMovement;
-        private PlayerLose playerLose;
+        private PlayerLose _playerLose;
 
         private void Start()
         {
             playerMovement = GetComponentInParent<PlayerMovement>();
-            playerLose = GetComponentInParent<PlayerLose>();
+            _playerLose = GetComponentInParent<PlayerLose>();
         }
 
         private void OnTriggerEnter(Collider other)
@@ -19,11 +19,12 @@ namespace Player
             if (other.CompareTag("Obstacle"))
             {
                 playerMovement.StopMovement();
-                playerLose.GameOver();
+                _playerLose.GameOver();
             }
             if (other.CompareTag("Enemy"))
             {
-                
+                playerMovement.StopMovement();
+                _playerLose.GameOver();
             }
         }
     }

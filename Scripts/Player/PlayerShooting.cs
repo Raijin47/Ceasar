@@ -57,7 +57,6 @@ namespace Player
                 {
                     currentAmmoCount--;
                     bullet.Shot();
-                    //bullet.CreateBullet();
                     ammoCountText.text = currentAmmoCount.ToString();
                     isPauseShot = true;
                     corIntervalShot = StartCoroutine(IntervalShotCOR());

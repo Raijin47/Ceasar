@@ -19,11 +19,12 @@ namespace Player
         private bool isAcceleration = false;
         private bool canMove = true;
 
-        private static readonly int DeathA = Animator.StringToHash("isDeath");
-        private static readonly int isFireA = Animator.StringToHash("isFire");
+        //private static readonly int DeathA = Animator.StringToHash("isDeath");
+        //private static readonly int isFireA = Animator.StringToHash("isFire");
 
         private void Start()
         {
+
             anim = GetComponent<Animator>();
             characterController = GetComponent<CharacterController>();
             speed = Equipment.speed;
@@ -63,9 +64,6 @@ namespace Player
             characterController.Move(moveDirection * Time.deltaTime);
         }
 
-        public void StopMovement()
-        {
-            canMove = false;
-        }
+        public void StopMovement() => canMove = false;
     }
 }

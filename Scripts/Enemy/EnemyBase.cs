@@ -69,7 +69,6 @@ namespace Enemy
             Die?.Invoke(this);
         }
 
-
         public void Release()
         {
 
@@ -77,16 +76,12 @@ namespace Enemy
 
         public void TakeDamage(int damageValue)
         {
-            if (damageValue >= _health)
+            _health -= damageValue;
+            if (_health <= 0)
             {
                 EnemyScore.ZombieKilled();
                 Death();
             }
-
-            else _health -= damageValue;
-            //if (_health >= 0)
-            //_health -= damageValue;
-            //else Death();
         }
 
         private void OnTriggerEnter(Collider other)

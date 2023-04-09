@@ -48,7 +48,7 @@ namespace Player
 
                 ManagerData.SaveData();
 
-                Time.timeScale = 0;
+                //Time.timeScale = 0;
                 yield break;
             }
         }

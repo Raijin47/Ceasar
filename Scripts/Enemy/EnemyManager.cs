@@ -13,8 +13,14 @@ namespace Enemy
         [SerializeField] private Transform _content;
         [SerializeField] private EnemyLocator _enemyLocator;
         [SerializeField] private Transform[] _enemySpawnPosition;
-        [SerializeField] private float _intervalSpawn;
         [SerializeField] private Transform _player;
+
+        [SerializeField] private float _intervalSpawn;
+
+        [SerializeField] private int _maxCountEnemy;
+        [SerializeField] private int _countSpawnEnemy;
+        [SerializeField] private int _countEnemyBeforeBoss;
+
 
         private Coroutine corSpawner;
         private EnemyFactory _enemyFactory;
@@ -39,19 +45,25 @@ namespace Enemy
             while (true)
             {
                 yield return new WaitForSeconds(_intervalSpawn);
-                StartSpawn();
+                for(int i = 0; i < _countSpawnEnemy; i++)
+                    StartSpawn();
             }
         }
 
         private void Init()
         {
-            _instantiateObject = new PoolInstantiateObject<EnemyBase>(_enemyLocator.EnemyBase);
+            _instantiateObject = new PoolInstantiateObject<EnemyBase>(_enemyLocator.EnemyBase, _maxCountEnemy);
             _enemyProvider = new EnemyProvider(_instantiateObject, _content, _player);
         }
 
         private void StartSpawn()
         {
             _enemyProvider.CreateEnemy(_enemySpawnPosition[Random.Range(0, _enemySpawnPosition.Length)].position);
+        }
+
+        private void OnDestroy()
+        {
+            _enemyProvider.Dispose();
         }
     }
 }

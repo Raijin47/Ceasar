@@ -17,5 +17,5 @@ MonoBehaviour:
   motobikeName: Preset 1
   goldCost: 1000
   speed: 7
-  acceleration: 12
+  acceleration: 9
   controllability: 1

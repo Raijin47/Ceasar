@@ -9,10 +9,8 @@ namespace Enemy
     {
         public event Action<EnemyBase> Die;
 
-        [SerializeField] private CharacterController _characterController;
         [SerializeField] private Animator anim;
         [SerializeField] private GameObject[] presets;
-        [SerializeField] private float _intervalCor;
         [SerializeField] private float _maxSpeed;
         [SerializeField] private float _trackingRange = 1f;
         [SerializeField] private float _speedYMin = 0.1f;
@@ -33,15 +31,12 @@ namespace Enemy
 
         public void Init(Transform player)
         {
-            if(i != -1) presets[i].SetActive(false);
+            _player = player;
+            if (i != -1) presets[i].SetActive(false);
             i = Random.Range(0, presets.Length);
             presets[i].SetActive(true);
-
-            anim.SetBool(DeathA, false);
-            _speedTracking = Random.Range(_speedYMin, _speedYMax);
-            _currentSpeed = Equipment.speed + Random.Range(0.5f, _maxSpeed);
-            _player = player;
-            _health = _maxHealth;
+            
+            ResetData();
         }
 
         private void Update()
@@ -59,9 +54,8 @@ namespace Enemy
 
         private void Movement()
         {
-            moveDirection = new Vector3(1, 0f, _rotationEnemy);
-            moveDirection *= _currentSpeed;
-            _characterController.Move(moveDirection * Time.deltaTime);
+            moveDirection = new Vector3(1, 0, _rotationEnemy);
+            transform.position = Vector3.Lerp(transform.position, transform.position + moveDirection, _currentSpeed * Time.deltaTime);
         }
 
         public void Cleaner()
@@ -71,7 +65,15 @@ namespace Enemy
 
         public void Release()
         {
+            
+        }
 
+        public void ResetData()
+        {
+            _health = _maxHealth;
+            _currentSpeed = Equipment.speed + Random.Range(0.5f, _maxSpeed);
+            _speedTracking = Random.Range(_speedYMin, _speedYMax);
+            anim.SetBool(DeathA, false);
         }
 
         public void TakeDamage(int damageValue)

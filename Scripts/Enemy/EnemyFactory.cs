@@ -14,12 +14,15 @@ namespace Enemy
             _poolEnemy = poolEnemy;
         }
 
-        public EnemyBase Spawn(Vector3 position)
+        public (EnemyBase, bool) Spawn(Vector3 position)
         {
             var obj = _poolEnemy.GetInstantiate();
-            var transform = obj.transform;
-            transform.parent = _content;
-            transform.position = position;
+            if(obj.Item1 != null)
+            {
+                var transform = obj.Item1.transform;
+                transform.parent = _content;
+                transform.position = position;
+            }
             return obj;
         }
     }

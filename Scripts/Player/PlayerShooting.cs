@@ -6,11 +6,11 @@ using Bullet;
 namespace Player
 {
     public class PlayerShooting : MonoBehaviour
-    {
-        //[SerializeField] private BulletManager bullet;
+    {       
         private BulletParticle bullet;
         [SerializeField] private Text ammoCountText;
         [SerializeField] private KeyCode ReloadKeyCode;
+        [SerializeField] private Image reloadImage;
 
         private Coroutine corReloadTimer;
         private Coroutine corIntervalShot;
@@ -53,6 +53,7 @@ namespace Player
         {
             if (currentAmmoCount > 0)
             {
+                
                 if (!isPauseShot && !isReload)
                 {
                     currentAmmoCount--;
@@ -66,24 +67,20 @@ namespace Player
 
         private IEnumerator IntervalShotCOR()
         {
-            while (isPauseShot)
-            {
-                yield return new WaitForSeconds(intervalShot);
-                isPauseShot = false;
-                yield break;
-            }
+            var timer = new WaitForSeconds(intervalShot);
+            yield return timer;
+            isPauseShot = false;
+            yield break;
         }
 
         private IEnumerator ReloadTimerCOR()
         {
-            while (isReload)
-            {
-                yield return new WaitForSeconds(reloadTime);
-                currentAmmoCount = ammoCount;
-                ammoCountText.text = currentAmmoCount.ToString();
-                isReload = false;
-                yield break;
-            }
+            var timer = new WaitForSeconds(reloadTime);
+            yield return timer;
+            currentAmmoCount = ammoCount;
+            ammoCountText.text = currentAmmoCount.ToString();
+            isReload = false;
+            yield break;
         }
     }
 }

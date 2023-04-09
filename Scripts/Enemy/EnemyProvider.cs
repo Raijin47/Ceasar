@@ -27,17 +27,33 @@ namespace Enemy
         }
 
         private void OnDie(EnemyBase enemyBase)
-        {
-            enemyBase.Die -= OnDie;
+        {               
             Remove(enemyBase);
+        }
+
+        public void Dispose()
+        {
+            for(int i = 0; i < _enemyBases.Count; i++)
+            {
+                _enemyBases[i].Die -= OnDie;
+            }
         }
 
         public void CreateEnemy(Vector3 position)
         {
-            var enemyBase = _enemyFactory.Spawn(position);
-            if (IsHave(enemyBase))
+            var enemyData = _enemyFactory.Spawn(position);
+            var enemyBase = enemyData.Item1;
+            if (enemyBase == null)
                 return;
-            Add(enemyBase);
+            var isInstantiate = enemyData.Item2;
+            if(isInstantiate) Add(enemyBase);
+            else ResetPoolEnemy(enemyBase);
+        }
+
+        private void ResetPoolEnemy(EnemyBase enemyBase)
+        {
+            enemyBase.gameObject.SetActive(true);
+            enemyBase.ResetData();
         }
 
         public void Add(EnemyBase enemyBase)
@@ -52,15 +68,6 @@ namespace Enemy
             _enemyBases.Remove(enemyBase);
             enemyBase.Release();
             _poolInstantiateObject.Release(enemyBase);
-        }
-
-        private bool IsHave(EnemyBase enemyBase)
-        {
-            foreach(var Enemy in _enemyBases)
-            {
-                if (Enemy.GetInstanceID() == enemyBase.GetInstanceID()) return true;
-            }
-            return false;
         }
     }
 }

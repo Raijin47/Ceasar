@@ -16,8 +16,8 @@ MonoBehaviour:
   icon: {fileID: 1619333291, guid: 4b007ba37d11679438ecf9c754d51810, type: 3}
   weaponName: "\u041A\u043E\u0441\u043C\u0438\u0447\u0435\u0441\u043A\u0438\u0439
     \u043F\u0438\u0441\u0442\u043E\u043B\u0435\u0442 \u043F\u0443\u043B\u0435\u043C\u0435\u0442"
-  goldCost: 20000
-  damageValue: 0
-  ammoCount: 5
-  reloadTime: 0
-  intervalShot: 0
+  goldCost: 40000
+  damageValue: 15
+  ammoCount: 25
+  reloadTime: 10
+  intervalShot: 0.1

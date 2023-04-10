@@ -263,13 +263,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponData:
-  - {fileID: 11400000, guid: ec8de48155f67c24da6ca3807266b3e0, type: 2}
-  - {fileID: 11400000, guid: 15e7c16dc2a735b4eb804b74bc287f1c, type: 2}
-  - {fileID: 11400000, guid: b8dcf4695f539c94d82442719617e782, type: 2}
+  - {fileID: 11400000, guid: 1dc7bf33e28776b40a2853466c50526e, type: 2}
   - {fileID: 11400000, guid: bbc4dbaff830b8e4aa53f04a2f5dee97, type: 2}
+  - {fileID: 11400000, guid: 716d31acbccb8924da35b460866db3e9, type: 2}
+  - {fileID: 11400000, guid: e4ba1f46d38404a44aeebc4ab6907b2d, type: 2}
   motobikeData:
-  - {fileID: 11400000, guid: f6a8ca5d29fc7374cb14c8699a5d2d11, type: 2}
+  - {fileID: 11400000, guid: f587e027e28ff8e40a283c06841eadad, type: 2}
   - {fileID: 11400000, guid: 51ddc25c9c41fa943ace7a343601fdb7, type: 2}
+  - {fileID: 11400000, guid: f6a8ca5d29fc7374cb14c8699a5d2d11, type: 2}
   charaData:
   - {fileID: 11400000, guid: d4180b13bf3381742aa5e49b6a079e79, type: 2}
   moneyText: {fileID: 1095894022}

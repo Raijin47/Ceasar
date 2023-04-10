@@ -746,7 +746,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 1, g: 0.9990684, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -10325,7 +10325,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -7098654308653242105, guid: 20ad5fa008bf71e4d89c4609f6c51823, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 9bfae5948251e8449a405dcf729bc54e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1baeca875f4934e49b68bc54af4c7cfc, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

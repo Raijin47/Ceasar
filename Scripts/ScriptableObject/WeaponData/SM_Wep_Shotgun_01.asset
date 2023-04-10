@@ -15,8 +15,8 @@ MonoBehaviour:
   prefab: {fileID: 1345368308290578, guid: 9ec98e8c57546a746a43196444d9c97f, type: 3}
   icon: {fileID: -962212744, guid: 4b007ba37d11679438ecf9c754d51810, type: 3}
   weaponName: Shotgun
-  goldCost: 5000
-  damageValue: 50
-  ammoCount: 100
-  reloadTime: 2
-  intervalShot: 1
+  goldCost: 20000
+  damageValue: 14
+  ammoCount: 7
+  reloadTime: 13
+  intervalShot: 0.4

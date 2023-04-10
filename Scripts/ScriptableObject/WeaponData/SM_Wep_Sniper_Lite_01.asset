@@ -17,7 +17,7 @@ MonoBehaviour:
   weaponName: "\u0421\u043D\u0430\u0439\u043F\u0435\u0440\u0441\u043A\u0430\u044F
     \u0432\u0438\u043D\u0442\u043E\u0432\u043A\u0430"
   goldCost: 20000
-  damageValue: 0
-  ammoCount: 5
-  reloadTime: 0
-  intervalShot: 0
+  damageValue: 13
+  ammoCount: 8
+  reloadTime: 12
+  intervalShot: 0.4

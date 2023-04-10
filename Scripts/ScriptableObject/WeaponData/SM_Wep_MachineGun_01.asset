@@ -15,8 +15,8 @@ MonoBehaviour:
   prefab: {fileID: 1787681452143696, guid: e93050ee6a1feb949b8fdc9a97d295b1, type: 3}
   icon: {fileID: 1932558442, guid: 4b007ba37d11679438ecf9c754d51810, type: 3}
   weaponName: "\u041F\u0443\u043B\u0435\u043C\u0435\u0442"
-  goldCost: 20000
-  damageValue: 2
-  ammoCount: 10000
-  reloadTime: 2
+  goldCost: 50000
+  damageValue: 16
+  ammoCount: 70
+  reloadTime: 25
   intervalShot: 0.1

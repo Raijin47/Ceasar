@@ -16,16 +16,18 @@ namespace Enemy
         [SerializeField] private Transform _player;
 
         [SerializeField] private float _intervalSpawn;
+        [SerializeField] private float _health;
+        [SerializeField] private float _multiplyHealth;
 
         [SerializeField] private int _maxCountEnemy;
         [SerializeField] private int _countSpawnEnemy;
-        [SerializeField] private int _countEnemyBeforeBoss;
-
-
+ 
         private Coroutine corSpawner;
         private EnemyFactory _enemyFactory;
         private EnemyProvider _enemyProvider;
         private PoolInstantiateObject<EnemyBase> _instantiateObject;
+
+        private int _healthInt;
 
         private void Awake()
         {
@@ -36,6 +38,7 @@ namespace Enemy
         {
             Init();
             EnemyScore.Clean();
+            _healthInt = Mathf.RoundToInt(_health);
             corSpawner = StartCoroutine(SpawnerCOR());
             Application.targetFrameRate = 60;
         }
@@ -50,6 +53,12 @@ namespace Enemy
             }
         }
 
+        public void IncreaseHealth()
+        {
+            _health *= _multiplyHealth;
+            _healthInt = Mathf.RoundToInt(_health);
+        }
+
         private void Init()
         {
             _instantiateObject = new PoolInstantiateObject<EnemyBase>(_enemyLocator.EnemyBase, _maxCountEnemy);
@@ -58,7 +67,7 @@ namespace Enemy
 
         private void StartSpawn()
         {
-            _enemyProvider.CreateEnemy(_enemySpawnPosition[Random.Range(0, _enemySpawnPosition.Length)].position);
+            _enemyProvider.CreateEnemy(_enemySpawnPosition[Random.Range(0, _enemySpawnPosition.Length)].position, _healthInt);
         }
 
         private void OnDestroy()

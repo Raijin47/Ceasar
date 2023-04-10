@@ -13,9 +13,8 @@ namespace Player
         [SerializeField] private Text timer;
         [SerializeField] private Text addGoldText;
 
-        [SerializeField] private float multiplierFactor;
         [SerializeField] private float timerAfterLose;
-        [SerializeField] private float multiplierZombie;
+        [SerializeField] private int multiplierZombie;
         [SerializeField] private float multiplierDistance;
 
         private bool isGameOver = false;
@@ -37,11 +36,12 @@ namespace Player
                 gameOverPunel.SetActive(true);              
                 timer.text = Mathf.Round(Time.time - timerAfterLose) + "с".ToString();
                 zombieKilledText.text = EnemyScore._zombieKilled.ToString();
-                float distanceTravelled = transform.position.x * multiplierFactor;
+                float distanceTravelled = transform.position.x;
                 distanceTravelledText.text = Mathf.Round(distanceTravelled) + "м".ToString();
 
-                addGoldText.text = Mathf.Round((distanceTravelled * multiplierDistance) + (EnemyScore._zombieKilled * multiplierZombie)).ToString();// домножить на кол-во убитых боссов
-
+                int goldReceived = (Mathf.FloorToInt(distanceTravelled * multiplierDistance)) + (EnemyScore._zombieKilled * multiplierZombie * EnemyScore._bossKilled);
+                addGoldText.text = goldReceived.ToString();
+                ManagerData.money += goldReceived;
 
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;

@@ -1,9 +1,12 @@
 using UnityEngine;
+using Enemy;
 
 public class EnemyBossTrigger : MonoBehaviour
 {
+    [SerializeField] private EnemyBoss boss;
     [SerializeField] private float distanceToBoss;
-    [SerializeField] private Transform spawnPos;
+
+    private bool isBossFight = false;
 
     private void Start()
     {
@@ -14,5 +17,17 @@ public class EnemyBossTrigger : MonoBehaviour
     {
         transform.position += new Vector3(distanceToBoss, 0, 0);
 
+        if(!isBossFight)
+        {
+            boss.gameObject.SetActive(true);
+            boss.Init();
+            isBossFight = true;
+        }   
+    }
+
+    public void BossKilled()
+    {
+        isBossFight = false;
+        boss.gameObject.SetActive(false);
     }
 }

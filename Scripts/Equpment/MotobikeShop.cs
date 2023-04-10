@@ -1,11 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class MotobikeShop : MonoBehaviour
 {
-    [SerializeField] private Text title;
-    [SerializeField] private Text costText;
-    [SerializeField] private Text money;
+    [SerializeField] private TextMeshProUGUI title;
+    [SerializeField] private TextMeshProUGUI costText;
+    [SerializeField] private TextMeshProUGUI money;
     [SerializeField] private Image previewImage;
     [SerializeField] private Image speedImage;
     [SerializeField] private Image controllabilityImage;

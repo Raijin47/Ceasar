@@ -16,8 +16,6 @@ namespace Enemy
         [SerializeField] private float _speedYMin = 0.1f;
         [SerializeField] private float _speedYMax = 0.5f;
 
-        [SerializeField] private int _maxHealth = 10;
-
         private Vector3 moveDirection = Vector3.zero;
         private Transform _player;
 
@@ -29,14 +27,14 @@ namespace Enemy
         private int i = -1;
         private static readonly int DeathA = Animator.StringToHash("isDeath");
 
-        public void Init(Transform player)
+        public void Init(Transform player, int health)
         {
             _player = player;
             if (i != -1) presets[i].SetActive(false);
             i = Random.Range(0, presets.Length);
             presets[i].SetActive(true);
             
-            ResetData();
+            ResetData(health);
         }
 
         private void Update()
@@ -68,9 +66,9 @@ namespace Enemy
             
         }
 
-        public void ResetData()
+        public void ResetData(int maxHealth)
         {
-            _health = _maxHealth;
+            _health = maxHealth;
             _currentSpeed = Equipment.speed + Random.Range(0.5f, _maxSpeed);
             _speedTracking = Random.Range(_speedYMin, _speedYMax);
             anim.SetBool(DeathA, false);

@@ -15,7 +15,7 @@ namespace Player
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Obstacle") || other.CompareTag("Enemy")) //|| other.CompareTag("Boss"))
+            if (other.CompareTag("Obstacle") || other.CompareTag("Enemy") || other.CompareTag("Boss"))
             {
                 playerMovement.StopMovement();
                 _playerLose.GameOver();

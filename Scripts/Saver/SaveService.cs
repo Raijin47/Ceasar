@@ -20,8 +20,4 @@ namespace Saver
             return JsonUtility.FromJson<T>(File.ReadAllText(path));
         }
     }
-
-
-
-
 }

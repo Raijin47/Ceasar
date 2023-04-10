@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CharaShop : MonoBehaviour
 {
-    [SerializeField] private Text title;
-    [SerializeField] private Text descriptionText;
+    [SerializeField] private TextMeshProUGUI title;
+    [SerializeField] private TextMeshProUGUI descriptionText;
     [SerializeField] private Image previewImage;
     [SerializeField] private GameObject selectedButton;
     [SerializeField] private GameObject purchasedButton;

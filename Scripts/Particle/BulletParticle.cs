@@ -21,11 +21,10 @@ namespace Bullet
 
         private void OnParticleCollision(GameObject other)
         {
-            if (other.TryGetComponent(out EnemyBase enemy))
+            if (other.TryGetComponent(out IDamageable enemy))
             {
                 enemy.TakeDamage(_damage);
             }
         }
     }
 }
-

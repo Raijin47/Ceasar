@@ -18,12 +18,12 @@ namespace Enemy
             _poolInstantiateObject = poolInstantiateObject;
         }
 
-        private void InitEnemy(EnemyBase enemyBase, Transform player)
+        private void InitEnemy(EnemyBase enemyBase, Transform player, int health)
         {
             player = _player;
             enemyBase.gameObject.SetActive(true);
             enemyBase.Die += OnDie;
-            enemyBase.Init(_player);
+            enemyBase.Init(_player, health);
         }
 
         private void OnDie(EnemyBase enemyBase)
@@ -39,27 +39,27 @@ namespace Enemy
             }
         }
 
-        public void CreateEnemy(Vector3 position)
+        public void CreateEnemy(Vector3 position, int health)
         {
             var enemyData = _enemyFactory.Spawn(position);
             var enemyBase = enemyData.Item1;
             if (enemyBase == null)
                 return;
             var isInstantiate = enemyData.Item2;
-            if(isInstantiate) Add(enemyBase);
-            else ResetPoolEnemy(enemyBase);
+            if(isInstantiate) Add(enemyBase, health);
+            else ResetPoolEnemy(enemyBase, health);
         }
 
-        private void ResetPoolEnemy(EnemyBase enemyBase)
+        private void ResetPoolEnemy(EnemyBase enemyBase, int health)
         {
             enemyBase.gameObject.SetActive(true);
-            enemyBase.ResetData();
+            enemyBase.ResetData(health);
         }
 
-        public void Add(EnemyBase enemyBase)
+        public void Add(EnemyBase enemyBase, int health)
         {
             _enemyBases.Add(enemyBase);
-            InitEnemy(enemyBase, _player);
+            InitEnemy(enemyBase, _player, health);
         }
 
         public void Remove(EnemyBase enemyBase)

@@ -2,12 +2,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
+using TMPro;
 
 public class SceneTransition : MonoBehaviour
 {
     [SerializeField] private GameObject imageFade;
     [SerializeField] private Image progressBar;
-    [SerializeField] private Text loadingText;
+    [SerializeField] private TextMeshProUGUI loadingText;
     AsyncOperation asyncOperation;
 
     public void AsyncLoadButton(string sceneName) => StartCoroutine("AsyncLoadCOR", sceneName);
